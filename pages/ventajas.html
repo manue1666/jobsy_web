@@ -24,8 +24,8 @@
     <!--SECCIÓN PROPÓSITO-->
     <div class="proposito-card">
       <div class="card-body">
-        <h3 class="fw-bold">Propósito</h3>
-        <p>
+        <h3 class="fw-bold" id="propositoTitulo">Propósito</h3>
+        <p id="proposito">
           En la actualidad, muchas personas requieren servicios de manera rápida y
           confiable, pero no siempre conocen profesionales en su zona y, al mismo
           tiempo, miles de técnicos independientes y pequeños negocios tienen
@@ -46,7 +46,7 @@
           alt="Accesibilidad"
         />
         <div class="card-body">
-          <p class="card-text">
+          <p class="card-text" id="ventaja1">
             Más accesible para proveedores pequeños (Costos más bajos).
           </p>
         </div>
@@ -59,7 +59,7 @@
           alt="Modernidad"
         />
         <div class="card-body">
-          <p class="card-text">Más moderno y usable.</p>
+          <p class="card-text" id="ventaja2">Más moderno y usable.</p>
         </div>
       </div>
 
@@ -70,7 +70,7 @@
           alt="Modelo de negocio"
         />
         <div class="card-body">
-          <p class="card-text">Modelo de negocio claro y flexible.</p>
+          <p class="card-text" id="ventaja3">Modelo de negocio claro y flexible.</p>
         </div>
       </div>
 
@@ -81,7 +81,7 @@
           alt="Enfoque local"
         />
         <div class="card-body">
-          <p class="card-text">Enfoque local.</p>
+          <p class="card-text" id="ventaja4">Enfoque local.</p>
         </div>
       </div>
     </div>
@@ -99,8 +99,8 @@
               class="videosGifsBeneficios"
             ></video>
           </div>
-          <p class="card-beneficio-title">BOOST</p>
-          <p class="card-beneficio-desc">
+          <p class="card-beneficio-title" id="boostTitulo">BOOST</p>
+          <p class="card-beneficio-desc" id="boostDescripcion">
             Planes para la promoción de servicios. Aumenta la visibilidad de tus
             publicaciones por tiempo limitado.
           </p>
@@ -133,7 +133,7 @@
             ></video>
           </div>
           <p class="card-beneficio-title">PREMIUM</p>
-          <p class="card-beneficio-desc">
+          <p class="card-beneficio-desc" id="premiumDescripcion">
             Suscripción mensual con beneficios exclusivos: más servicios, más
             fotos, distintivo especial y acceso a funciones avanzadas.
           </p>
@@ -167,6 +167,18 @@
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("navbar").innerHTML = html;
+          
+          const navBarInicio = document.getElementById('navBarInicio');
+const navBarVentajas = document.getElementById('navBarVentajas');
+const navBarFuncionalidades = document.getElementById('navBarFuncionalidades');
+const navBarServicios = document.getElementById('navBarServicios');
+const navBarInversion = document.getElementById('navBarInversion');
+
+    navBarInicio.textContent = 'Start';
+    navBarVentajas.textContent = 'Advantages';
+    navBarFuncionalidades.textContent = 'Features';
+    navBarServicios.textContent = 'Services';
+    navBarInversion.textContent = 'Investment';
         });
 
       // Cargar footer.html dinámicamente
@@ -174,7 +186,39 @@
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("footer").innerHTML = html;
+                if(navigator.language.split('-')[0]==="es"){
+
+                    const footerDescripcion = document.getElementById('footerDescripcion');
+const footerUbicacion = document.getElementById('footerUbicacion');
+    footerDescripcion.textContent = 'Divine Innovation, Earthly Technology';
+    footerUbicacion.textContent = 'Location';
+                }
         });
+    </script>
+
+    <script>
+
+      if(navigator.language.split('-')[0]==="es"){
+      const frase = document.getElementById('frase');
+      const proposito = document.getElementById('proposito');
+      const propositoTitulo = document.getElementById('propositoTitulo');
+      const ventaja1 = document.getElementById('ventaja1');
+      const ventaja2 = document.getElementById('ventaja2');
+      const ventaja3 = document.getElementById('ventaja3');
+      const ventaja4 = document.getElementById('ventaja4');
+      const boostDescripcion = document.getElementById('boostDescripcion');
+      const premiumDescripcion = document.getElementById('premiumDescripcion');
+    frase.textContent = 'Advantages';
+        propositoTitulo.textContent = 'Purpose';
+    proposito.textContent = 'Today, many people need fast and reliable services, but they dont always know of professionals in their area. At the same time, thousands of independent technicians and small businesses struggle to gain visibility with potential local clients. Jobsy offers a technology solution that connects those seeking technical services with nearby providers, aiming to support the local economy and facilitate access to quality services.';
+    ventaja1.textContent = 'More accessible for smaller suppliers (lower costs).';
+    ventaja2.textContent = 'More modern and user-friendly.';
+    ventaja3.textContent = 'Clear and flexible business model.';
+    ventaja4.textContent = 'Local focus.';
+    boostDescripcion.textContent = 'Plans for promoting services. Increase the visibility of your limited-time posts.';
+    premiumDescripcion.textContent = 'Monthly subscription with exclusive benefits: more services, more photos, a special badge, and access to advanced features.';
+  }
+
     </script>
   </body>
 </html>

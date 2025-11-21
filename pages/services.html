@@ -13,7 +13,7 @@
     <div id="navbar"></div>
 
     <!--TITULO DE PAGINA-->
-    <p class="fw-bolder size_title text-center">Busca cualquier servicio en JOBSY</p>
+    <p class="fw-bolder size_title text-center" id="titulo">Busca cualquier servicio en JOBSY</p>
 
     <!--BARRA DE BÚSQUEDA-->
     <div class="container mt-4 mb-5">
@@ -23,7 +23,7 @@
                     <input 
                         type="text" 
                         class="form-control rounded-start-5" 
-                        placeholder="Busca un servicio..." 
+                        placeholder="Search for a service..." 
                         id="searchInput"
                         aria-label="Buscar servicio"
                     />
@@ -62,6 +62,20 @@
             .then((res) => res.text())
             .then((html) => {
                 document.getElementById("navbar").innerHTML = html;
+                                  if(navigator.language.split('-')[0]==="es"){
+
+          const navBarInicio = document.getElementById('navBarInicio');
+const navBarVentajas = document.getElementById('navBarVentajas');
+const navBarFuncionalidades = document.getElementById('navBarFuncionalidades');
+const navBarServicios = document.getElementById('navBarServicios');
+const navBarInversion = document.getElementById('navBarInversion');
+
+    navBarInicio.textContent = 'Start';
+    navBarVentajas.textContent = 'Advantages';
+    navBarFuncionalidades.textContent = 'Features';
+    navBarServicios.textContent = 'Services';
+    navBarInversion.textContent = 'Investment';
+      }
             });
 
         // Cargar footer dinámicamente
@@ -69,6 +83,13 @@
             .then((res) => res.text())
             .then((html) => {
                 document.getElementById("footer").innerHTML = html;
+                            if(navigator.language.split('-')[0]==="es"){
+
+          const footerDescripcion = document.getElementById('footerDescripcion');
+const footerUbicacion = document.getElementById('footerUbicacion');
+    footerDescripcion.textContent = 'Divine Innovation, Earthly Technology';
+    footerUbicacion.textContent = 'Location';
+                }
             });
         
         // Cargar servicios iniciales
@@ -94,6 +115,11 @@
                 }
             }
         });
+
+        if(navigator.language.split('-')[0] === "es"){
+            const titulo = document.getElementById('titulo');
+            titulo.textContent = 'Search for any service on JOBSY';
+        }
     </script>
 </body>
 </html>
