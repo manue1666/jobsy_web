@@ -62,7 +62,7 @@
             .then((res) => res.text())
             .then((html) => {
                 document.getElementById("navbar").innerHTML = html;
-                                  if(navigator.language.split('-')[0]==="es"){
+                                  if(!navigator.language.split('-')[0]==="es"){
 
           const navBarInicio = document.getElementById('navBarInicio');
 const navBarVentajas = document.getElementById('navBarVentajas');
@@ -83,7 +83,7 @@ const navBarInversion = document.getElementById('navBarInversion');
             .then((res) => res.text())
             .then((html) => {
                 document.getElementById("footer").innerHTML = html;
-                            if(navigator.language.split('-')[0]==="es"){
+                            if(!navigator.language.split('-')[0]==="es"){
 
           const footerDescripcion = document.getElementById('footerDescripcion');
 const footerUbicacion = document.getElementById('footerUbicacion');
@@ -116,7 +116,7 @@ const footerUbicacion = document.getElementById('footerUbicacion');
             }
         });
 
-        if(navigator.language.split('-')[0] === "es"){
+        if(!navigator.language.split('-')[0] === "es"){
             const titulo = document.getElementById('titulo');
             titulo.textContent = 'Search for any service on JOBSY';
         }

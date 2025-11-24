@@ -15,7 +15,7 @@ const publicaContrataDescripcion = document.getElementById('publicaContrataDescr
 
 const descargarJobsy = document.getElementById('descargarJobsy');
 const descargarDescripcion = document.getElementById('descargarDescripcion');
-if(navigator.language.split('-')[0]==="es"){
+if(!navigator.language.split('-')[0]==="es"){
     carruselPublicaTitulo.textContent = 'PUBLISH';
     carruselPublicaTituloDescripcion.textContent = 'Get your services to reach more people.';
     carruselContrataTitulo.textContent = 'CONTRACT';
